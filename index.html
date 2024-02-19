@@ -12,18 +12,12 @@
 <body>
     <header>Lista de tarefas</header>
     <ul>
-        <li>
+        <li class="task">
             <p>
                 Tarefa 1
             </p>
-            <input type="checkbox" class="checked" onchange="markAsCompleted(this)">
-            <button class="delete">&#x2716;</button>
-        </li>
-        <li>
-            <p>
-                Tarefa 2
-            </p>
-            <input type="checkbox" class="checked" onchange="markAsCompleted(this)">
+            <input id="checkbox1" type="checkbox" class="checked" onchange="markAsCompleted(this)">
+            <label class="modifiedCheckbox" for="checkbox1"></label>
             <button class="delete">&#x2716;</button>
         </li>
     </ul>
