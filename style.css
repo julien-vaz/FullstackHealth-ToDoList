@@ -36,3 +36,7 @@ header {
     height: 100%;
     margin-left: 0.5em;
 }
+
+.completed {
+    text-decoration: line-through;
+}
