@@ -1,6 +1,38 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 ul {
+    max-width: 50vw;
     list-style-type: none;
     margin-left: 0;
     padding-left: 0;
     display: flex;
+    flex-direction: column;
+}
+
+li {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 2em;
+    width: fit-content;
+}
+
+header {
+    font-size: 2em;
+}
+
+#newItem {
+    display: flex;
+    justify-content: space-around;
+    height: 2em;
+}
+
+#appendNewItem {
+    height: 100%;
+    margin-left: 0.5em;
 }
