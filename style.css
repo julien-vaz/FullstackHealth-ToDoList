@@ -13,7 +13,7 @@ body {
     color: rgb(65, 60, 60);
 }
 
-ul {
+#taskList {
     max-width: 50vw;
     list-style-type: none;
     margin-left: 0;
@@ -34,7 +34,8 @@ ul {
     border-radius: 0.5em;
 }
 
-.task input[type="checkbox"] {
+/*
+.checkbox {
     display: none;
 }
 
@@ -46,9 +47,10 @@ ul {
     border-radius: 100%;
 }
 
-.task input[type="checkbox"]:checked + .modifiedCheckbox {
+.checkbox:checked + .modifiedCheckbox {
     background-color: rgb(122, 148, 156);
 }
+*/
 
 .delete {
     background-color: rgb(122, 148, 156);

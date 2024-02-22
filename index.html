@@ -11,19 +11,16 @@
 
 <body>
     <header>Lista de tarefas</header>
-    <ul>
+    <ul id="taskList">
         <li class="task">
-            <p>
-                Tarefa 1
-            </p>
-            <input id="checkbox1" type="checkbox" class="checked" onchange="markAsCompleted(this)">
-            <label class="modifiedCheckbox" for="checkbox1"></label>
+            <p>Tarefa 1</p>
+            <input id="checkbox1" class="checkbox" type="checkbox" onchange="markAsCompleted(this)">
             <button class="delete">&#x2716;</button>
         </li>
     </ul>
     <div id="newItem">
-        <input type="text" placeholder="Digite uma tarefa">
-        <button id="appendNewItem">Adicionar tarefa</button>
+        <input id="newItemText" type="text" placeholder="Digite uma tarefa">
+        <button id="appendNewItem" onclick="addNewTask()">Adicionar tarefa</button>
     </div>
 </body>
 
