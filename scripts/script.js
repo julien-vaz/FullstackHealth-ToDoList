@@ -24,22 +24,21 @@ verificando antes se já existe uma tarefa com o mesmo nome.
 */
 function addNewTask() {
     const taskList = document.getElementById("taskList");
-    console.log(taskList);
-    const newTaskText = document.getElementById("newItemText").value;
+    const newTaskText = document.getElementById("newItemText");
 
     // Verifica se a tarefa possui um nome.
-    if (newTaskText === "") {
+    if (newTaskText.value === "") {
         window.alert("Escolha um nome para a tarefa.");
 
     // Verifica se a tarefa já existe na lista.
     } else if (Array.from(taskList.querySelectorAll("li"))
-        .find((task) => task.querySelector("p").innerText == newTaskText) != undefined) {
+        .find((task) => task.querySelector("p").innerText == newTaskText.value) != undefined) {
         window.alert("Essa tarefa já foi adicionada.");
     } else {
-        
+
         // Cria um item e altera o HTML interno
         const newTask = document.createElement("li");
-        newTask.innerHTML = `<p>${newTaskText}</p>`;
+        newTask.innerHTML = `<p>${newTaskText.value}</p>`;
 
         // Cria uma checkbox
         const checkbox = document.createElement("input");
@@ -56,6 +55,9 @@ function addNewTask() {
         // Adiciona o novo item à lista
         newTask.classList.add("task");
         taskList.appendChild(newTask);
+
+        // Esvazia o campo de entrada
+        newTaskText.value = "";
     }
 };
 
