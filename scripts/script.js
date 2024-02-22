@@ -16,6 +16,9 @@ function markAsCompleted(checkbox) {
     } else {
         listItem.classList.remove("completed");
     };
+
+    // Atualiza o contador de tarefas
+    updateCounter();
 };
 
 /*
@@ -59,6 +62,9 @@ function addNewTask() {
 
         // Esvazia o campo de entrada
         newTaskText.value = "";
+
+        // Atualiza o contador de tarefas
+        updateCounter();
     };
 };
 
@@ -69,5 +75,23 @@ function removeTask(button) {
         `Você realmente deseja excluir a tarefa ${task.querySelector("p").innerText}?`
         )) {
         task.remove();
+        // Atualiza o contador de tarefas
+        updateCounter();
     };
 };
+
+// Função para obter o número de tarefas na lista e atualizar
+function updateCounter() {
+    debugger
+    const taskCounter = document.getElementById("taskCounter");
+    const taskList = document.querySelectorAll(".task");
+    let doneTasks = 0;
+    for (let i = 0; i < taskList.length; i++) {
+        if (taskList[i].querySelector("p").classList.contains("completed")) {
+            doneTasks += 1;
+        }
+    }
+    taskCounter.innerText = "(" + doneTasks + "/" + taskList.length + ") tarefas cumpridas";
+};
+
+updateCounter();
