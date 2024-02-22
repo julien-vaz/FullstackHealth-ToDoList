@@ -30,7 +30,7 @@ function addNewTask() {
     if (newTaskText.value === "") {
         window.alert("Escolha um nome para a tarefa.");
 
-    // Verifica se a tarefa já existe na lista.
+        // Verifica se a tarefa já existe na lista.
     } else if (Array.from(taskList.querySelectorAll("li"))
         .find((task) => task.querySelector("p").innerText == newTaskText.value) != undefined) {
         window.alert("Essa tarefa já foi adicionada.");
@@ -50,6 +50,7 @@ function addNewTask() {
         const button = document.createElement("button");
         button.innerHTML = "&#x2716;";
         button.classList.add("delete");
+        button.onclick = () => { removeTask(button) };
         newTask.appendChild(button);
 
         // Adiciona o novo item à lista
@@ -58,6 +59,15 @@ function addNewTask() {
 
         // Esvazia o campo de entrada
         newTaskText.value = "";
-    }
+    };
 };
 
+// Função que remove uma tarefa da lista.
+function removeTask(button) {
+    let task = button.parentElement;
+    if (window.confirm(
+        `Você realmente deseja excluir a tarefa ${task.querySelector("p").innerText}?`
+        )) {
+        task.remove();
+    };
+};
